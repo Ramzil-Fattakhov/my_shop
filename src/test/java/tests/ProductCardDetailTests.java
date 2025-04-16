@@ -15,7 +15,7 @@ public class ProductCardDetailTests extends BaseTest{
     ProductCardDetail productCardDetail = new ProductCardDetail();
 
     @Test
-    @Tag("smoke")
+    @Tag("regression")
     @Feature("Избранное")
     @Story("Детальная страница товара")
     @Owner("Fattakhov Ramzil")
@@ -35,7 +35,7 @@ public class ProductCardDetailTests extends BaseTest{
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regression")
     @Feature("Добавление в корзину")
     @Story("Детальная страница товара")
     @Owner("Fattakhov Ramzil")
@@ -55,7 +55,7 @@ public class ProductCardDetailTests extends BaseTest{
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regression")
     @Feature("Оставление вопроса")
     @Story("Детальная страница товара")
     @Owner("Fattakhov Ramzil")
