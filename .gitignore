@@ -1,29 +1,19 @@
-/.gradle
-/.idea
-*.log
-.gradle
+HELP.md
 build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+!**/src/main/**
+!**/src/test/**
 
-### IntelliJ IDEA ###
+### Intellij IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+### Gradle ###
+.gradle
+
+### Mac OS ###
+.DS_Store
+
+### Logs ###
+*.log
