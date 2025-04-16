@@ -17,7 +17,7 @@ public class BaseTest {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = System.getProperty("base URL", "https://my-shop.ru");
+        Configuration.baseUrl = System.getProperty("baseURL", "https://my-shop.ru");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
