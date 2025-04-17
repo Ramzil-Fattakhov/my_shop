@@ -13,7 +13,7 @@ import java.time.Duration;
 
 import static io.qameta.allure.Allure.step;
 
-public class MainPageTests extends BaseTest{
+public class MainPageTests extends TestBase{
 
     MainPage mainPage = new MainPage();
 

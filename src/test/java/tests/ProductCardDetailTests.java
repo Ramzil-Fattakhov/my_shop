@@ -10,7 +10,7 @@ import pages.ProductCardDetail;
 
 import static io.qameta.allure.Allure.step;
 
-public class ProductCardDetailTests extends BaseTest{
+public class ProductCardDetailTests extends TestBase{
 
     ProductCardDetail productCardDetail = new ProductCardDetail();
 
