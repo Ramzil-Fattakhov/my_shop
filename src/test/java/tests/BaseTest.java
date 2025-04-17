@@ -23,6 +23,11 @@ public class BaseTest {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.remote = System.getProperty("remote");
 
+        String remote = System.getProperty("remote");
+        if (remote != null && !remote.isEmpty()) {
+            Configuration.remote = remote;
+        }
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(
                 "enableVNC", true,
