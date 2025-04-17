@@ -15,7 +15,7 @@ public class ProductCardDetail {
             favoriteTabButton = $(".badge.bg-Myshop-Purple"),
             addToCardButton = $(byText("В корзину")).parent(),
             addToCardTabButton = $(".tabs-button.orange"),
-            questionFormButton = $("[to='#reviews']"),
+            questionFormButton = $(byText("Задать вопрос")),
             userNameInput = $("input#name"),
             questionTextInput = $("#inputTextarea"),
             sendQuestionButton = $(byText("Отправить")).parent(),
@@ -47,7 +47,7 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail openQuestionForm() {
-        questionFormButton.click();
+        questionFormButton.shouldBe(visible).parent().click();
         return this;
     }
 
