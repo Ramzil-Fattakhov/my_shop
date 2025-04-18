@@ -16,10 +16,10 @@ public class ProductCardDetail {
             favoriteTabButton = $(".badge.bg-Myshop-Purple"),
             addToCardButton = $(byText("В корзину")).parent(),
             addToCardTabButton = $(".tabs-button.orange"),
-            questionFormButton = $(byText("Задать вопрос")),
+            questionFormButton = $(byText("Задать вопрос")).parent().$("button"),
             userNameInput = $("input#name"),
             questionTextInput = $("#inputTextarea"),
-            sendQuestionButton = $(byText("Отправить")).parent().$("button"),
+            sendQuestionButton = $(byText("Отправить")),
             modalDialogHeader = $(byText("Спасибо за вопрос!"));
 
     public ProductCardDetail openProductDetailPage() {
@@ -48,7 +48,7 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail openQuestionForm() {
-        questionFormButton.shouldBe(visible).parent().click();
+        questionFormButton.scrollIntoView(true).shouldBe(visible).click();
         return this;
     }
 
@@ -59,7 +59,7 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail sendQuestion() {
-        sendQuestionButton.scrollIntoView(true).click();
+        sendQuestionButton.click();
         return this;
     }
 
