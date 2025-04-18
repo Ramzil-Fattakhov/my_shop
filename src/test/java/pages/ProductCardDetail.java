@@ -16,14 +16,14 @@ public class ProductCardDetail {
             favoriteTabButton = $(".badge.bg-Myshop-Purple"),
             addToCardButton = $(byText("В корзину")).parent(),
             addToCardTabButton = $(".tabs-button.orange"),
-            questionFormButton = $("#reviews").$(".border-bottom").$("button"),
+            questionFormButton = $("[to='#reviews']"),
             userNameInput = $("input#name"),
             questionTextInput = $("#inputTextarea"),
             sendQuestionButton = $(byText("Отправить")),
             modalDialogHeader = $(byText("Спасибо за вопрос!"));
 
     public ProductCardDetail openProductDetailPage() {
-        open("https://my-shop.ru/shop/product/5056419.html");
+        open("https://my-shop.ru/shop/product/4273514.html");
         return this;
     }
 
@@ -48,7 +48,7 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail openQuestionForm() {
-        questionFormButton.scrollIntoView(true).shouldBe(visible).click();
+        questionFormButton.click();
         return this;
     }
 
