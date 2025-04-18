@@ -16,7 +16,7 @@ public class ProductCardDetail {
             favoriteTabButton = $(".badge.bg-Myshop-Purple"),
             addToCardButton = $(byText("В корзину")).parent(),
             addToCardTabButton = $(".tabs-button.orange"),
-            questionFormButton = $(byText("Задать вопрос")).parent().$("button"),
+            questionFormButton = $("#reviews").$(".border-bottom").$("button"),
             userNameInput = $("input#name"),
             questionTextInput = $("#inputTextarea"),
             sendQuestionButton = $(byText("Отправить")),
