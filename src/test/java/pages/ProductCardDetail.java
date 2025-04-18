@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
@@ -18,7 +19,7 @@ public class ProductCardDetail {
             questionFormButton = $(byText("Задать вопрос")),
             userNameInput = $("input#name"),
             questionTextInput = $("#inputTextarea"),
-            sendQuestionButton = $(byText("Отправить")).parent(),
+            sendQuestionButton = $(byText("Отправить")).parent().$("button"),
             modalDialogHeader = $(byText("Спасибо за вопрос!"));
 
     public ProductCardDetail openProductDetailPage() {
@@ -58,7 +59,7 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail sendQuestion() {
-        sendQuestionButton.click();
+        sendQuestionButton.scrollIntoView(true).click();
         return this;
     }
 
