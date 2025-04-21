@@ -61,3 +61,9 @@ task regression_test(type: Test) {
         includeTags("regression")
     }
 }
+
+task categories_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("category")
+    }
+}
