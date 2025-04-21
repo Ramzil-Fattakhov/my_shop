@@ -6,7 +6,6 @@ import com.codeborne.selenide.SelenideElement;
 import java.util.Map;
 import java.util.Random;
 
-import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -49,11 +48,7 @@ public class CategoriesPage {
     }
 
     public CategoriesPage verifyCategoryTitle() {
-        if (expectedCategoryName == null || expectedCategoryName.isBlank()) {
-            categoryTitle.shouldBe(empty);
-        } else {
-            categoryTitle.shouldHave(text(expectedCategoryName));
-        }
+        categoryTitle.shouldHave(text(expectedCategoryName));
         return this;
     }
 
@@ -73,11 +68,7 @@ public class CategoriesPage {
     }
 
     public CategoriesPage verify2ndLevelCategoryTitle() {
-        if (expected2ndLevelCategoryName == null || expected2ndLevelCategoryName.isBlank()) {
-            categoryTitle.shouldBe(empty);
-        } else {
-            categoryTitle.shouldHave(text(expected2ndLevelCategoryName));
-        }
+        categoryTitle.shouldHave(text(expected2ndLevelCategoryName));
         return this;
     }
 }
