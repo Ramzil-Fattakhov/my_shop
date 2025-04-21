@@ -19,7 +19,10 @@ public class CategoriesPage {
 
     private final Random random = new Random();
     ElementsCollection categories = $$(".md-left a");
+    ElementsCollection categories2ndLevel = $$(".menu__sections a.menu__list__link.title");
     private String expectedCategoryName;
+    private String expected2ndLevelCategoryName;
+
 
     private final Map<String, String> categoryTitles = Map.of(
             "Книги", "Книги",
@@ -48,6 +51,26 @@ public class CategoriesPage {
 
     public CategoriesPage verifyCategoryTitle() {
         categoryTitle.shouldHave(text(expectedCategoryName));
+        return this;
+    }
+
+    public CategoriesPage hoverRandom2ndLevelCategory() {
+        int index = random.nextInt(categories.size());
+        SelenideElement chosen = categories.get(index);
+        chosen.hover();
+        return this;
+    }
+
+    public CategoriesPage clickRandom2ndLevelCategory() {
+        int index = random.nextInt(categories2ndLevel.size());
+        SelenideElement chosen = categories2ndLevel.get(index);
+        this.expected2ndLevelCategoryName = chosen.getText().trim();
+        chosen.click();
+        return this;
+    }
+
+    public CategoriesPage verify2ndLevelCategoryTitle() {
+        categoryTitle.shouldHave(text(expected2ndLevelCategoryName));
         return this;
     }
 }

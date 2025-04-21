@@ -35,8 +35,37 @@ public class CategoriesPageTests extends TestBase{
             categoriesPage.clickRandomCategory();
         });
 
-        step("Проверка открытия категории", () -> {
+        step("Проверка открытия листинга категории 1 уровня", () -> {
             categoriesPage.verifyCategoryTitle();
+        });
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Каталог")
+    @Story("Главная страница")
+    @Owner("Fattakhov Ramzil")
+    @DisplayName("Открытие каталога товаров и переход в категорию 2 уровня")
+    void openRandomCategories2ndLevel() {
+        step("Открытие главной страницы Майшоп", () -> {
+            mainPage.openPage();
+        });
+
+        step("Открытие каталога товаров", () -> {
+            categoriesPage.openCategoriesTab();
+        });
+
+        step("Наведение мыши на случайную категорию 2 уровня", () -> {
+            categoriesPage.hoverRandom2ndLevelCategory();
+        });
+
+        step("Клик по случайной категории 2 уровня", () -> {
+            categoriesPage.clickRandom2ndLevelCategory();
+        });
+
+
+        step("Проверка открытия листинга категории 2 уровня", () -> {
+            categoriesPage.verify2ndLevelCategoryTitle();
         });
     }
 }
