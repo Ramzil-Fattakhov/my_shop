@@ -25,7 +25,6 @@ public class ProductCardDetailTests extends TestBase{
         step("Открываем деталку товара", () -> {
             productCardDetail.openProductDetailPage();
         });
-
         step("Клик/добавить товар в избранное", () -> {
             productCardDetail.pressFavoriteButton();
         });
@@ -45,7 +44,6 @@ public class ProductCardDetailTests extends TestBase{
         step("Открываем деталку товара", () -> {
             productCardDetail.openProductDetailPage();
         });
-
         step("Добавить товар в корзину", () -> {
             productCardDetail.addToCard();
         });
@@ -65,19 +63,15 @@ public class ProductCardDetailTests extends TestBase{
         step("Открываем деталку товара", () -> {
             productCardDetail.openProductDetailPage();
         });
-
         step("Открытие формы 'Задать вопрос'", () -> {
             productCardDetail.openQuestionForm();
         });
-
         step("Заполнение формы", () -> {
             productCardDetail.setUserName("Иван", "Есть ли в наличии в твердом переплете?");
         });
-
         step("Клик по кнопке 'Отправить'", () -> {
             productCardDetail.sendQuestion();
         });
-
         step("Проверка появления модалки с текстом 'Спасибо за вопрос!'", () -> {
             productCardDetail.verifyQuestionIsSend();
         });

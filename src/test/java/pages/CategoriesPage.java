@@ -14,15 +14,13 @@ public class CategoriesPage {
 
     private SelenideElement
             categoriesTab = $(".header__menu"),
-            categoryTitle = $("h1"),
-            a = $("a");
+            categoryTitle = $("h1");
 
     private final Random random = new Random();
     ElementsCollection categories = $$(".md-left a");
     ElementsCollection categories2ndLevel = $$(".menu__sections a.menu__list__link.title");
     private String expectedCategoryName;
     private String expected2ndLevelCategoryName;
-
 
     private final Map<String, String> categoryTitles = Map.of(
             "Книги", "Книги",
