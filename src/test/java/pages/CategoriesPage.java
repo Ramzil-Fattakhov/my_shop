@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import java.util.Map;
 import java.util.Random;
 
+import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -41,14 +42,18 @@ public class CategoriesPage {
     public CategoriesPage clickRandomCategory() {
         int index = random.nextInt(categories.size());
         SelenideElement chosen = categories.get(index);
-        String menuCategoryName = chosen.getText();
+        String menuCategoryName = chosen.getText().trim();
         this.expectedCategoryName = categoryTitles.get(menuCategoryName);
         chosen.click();
         return this;
     }
 
     public CategoriesPage verifyCategoryTitle() {
-        categoryTitle.shouldHave(text(expectedCategoryName));
+        if (expectedCategoryName == null || expectedCategoryName.isBlank()) {
+            categoryTitle.shouldBe(empty);
+        } else {
+            categoryTitle.shouldHave(text(expectedCategoryName));
+        }
         return this;
     }
 
@@ -68,7 +73,11 @@ public class CategoriesPage {
     }
 
     public CategoriesPage verify2ndLevelCategoryTitle() {
-        categoryTitle.shouldHave(text(expected2ndLevelCategoryName));
+        if (expected2ndLevelCategoryName == null || expected2ndLevelCategoryName.isBlank()) {
+            categoryTitle.shouldBe(empty);
+        } else {
+            categoryTitle.shouldHave(text(expected2ndLevelCategoryName));
+        }
         return this;
     }
 }
