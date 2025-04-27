@@ -8,16 +8,17 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.CategoriesPage;
-
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Тесты каталога")
+@Tag("categoriesPage-tests")
 public class CategoriesPageTests extends TestBase{
 
     MainPage mainPage = new MainPage();
     CategoriesPage categoriesPage = new CategoriesPage();
 
     @Test
-    @Tag("category")
+    @Tag("smoke")
     @Feature("Каталог")
     @Story("Главная страница")
     @Owner("Fattakhov Ramzil")
@@ -38,7 +39,7 @@ public class CategoriesPageTests extends TestBase{
     }
 
     @Test
-    @Tag("category")
+    @Tag("smoke")
     @Feature("Каталог")
     @Story("Главная страница")
     @Owner("Fattakhov Ramzil")

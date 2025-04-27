@@ -7,9 +7,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProductCardDetail;
-
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Тесты детальной страницы товары")
+@Tag("productCardDetail-tests")
 public class ProductCardDetailTests extends TestBase{
 
     ProductCardDetail productCardDetail = new ProductCardDetail();
