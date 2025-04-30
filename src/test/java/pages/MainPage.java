@@ -19,7 +19,7 @@ public class MainPage {
             addressList = $(".autocomplete__list");
 
     public MainPage openPage() {
-        open("https://my-shop.ru");
+        open("/");
         return this;
     }
 
