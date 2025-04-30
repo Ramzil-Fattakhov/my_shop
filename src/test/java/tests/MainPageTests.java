@@ -70,7 +70,6 @@ public class MainPageTests extends TestBase{
             mainPage.openPage();
         });
         step("Открытие модалки выбора адреса", () -> {
-            WebDriverRunner.getWebDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
             mainPage.openAddressChoiceModal();
         });
         step("Выбор населенного пункта", () -> {
