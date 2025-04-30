@@ -74,12 +74,6 @@ task regression_test(type: Test) {
     }
 }
 
-task categories_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("category")
-    }
-}
-
 task mainPage_tests(type: Test) {
     useJUnitPlatform {
         includeTags("mainPage-tests")
