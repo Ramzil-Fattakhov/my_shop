@@ -21,7 +21,7 @@ public class ProductCardDetail {
             modalDialogHeader = $(byText("Спасибо за вопрос!"));
 
     public ProductCardDetail openProductDetailPage() {
-        open("https://my-shop.ru/shop/product/4273514.html");
+        open("https://my-shop.ru/shop/product/5048985.html");
         return this;
     }
 
