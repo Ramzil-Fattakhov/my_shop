@@ -1,6 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Condition.interactable;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -33,13 +35,12 @@ public class CategoriesPage {
 
     public CategoriesPage hover1stLevelCategory() {
         category1stLevelSupplies.hover();
-        actions().pause(500).perform();
+        $(".md-title").shouldHave(text("Канцтовары"));
         return this;
     }
 
     public CategoriesPage click2ndLevelCategory() {
-        actions().moveToElement(category2ndLevelCases).click().perform();
-        //  category2ndLevelCases.click();
+        category2ndLevelCases.shouldBe(interactable).click();
         return this;
     }
 
