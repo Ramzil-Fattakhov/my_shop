@@ -1,11 +1,12 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.interactions.Actions;
 
-import static com.codeborne.selenide.Condition.interactable;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
 public class CategoriesPage {
@@ -33,10 +34,20 @@ public class CategoriesPage {
     }
 
     public CategoriesPage hover1stLevelCategory() {
-        executeJavaScript(
-                "arguments[0].dispatchEvent(new MouseEvent('mouseover', {bubbles: true}));",
-                $(category1stLevelSupplies)
-        );
+
+        category1stLevelSupplies
+                .shouldBe(visible)
+                .shouldBe(interactable);
+
+        int elementWidth = category1stLevelSupplies.getSize().getWidth();
+        int xOffset = elementWidth / 2;
+
+        new Actions(getWebDriver())
+                .moveToElement(category1stLevelSupplies)
+                .pause(300)
+                .moveByOffset(xOffset, 0)
+                .pause(300)
+                .perform();
         return this;
     }
 
