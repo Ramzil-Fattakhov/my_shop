@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import java.util.Map;
 import java.util.Random;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -12,61 +13,38 @@ public class CategoriesPage {
 
     private SelenideElement
             categoriesTab = $(".header__menu"),
+            category1stLevelBooks = $(byText("Книги")),
+            category1stLevelSupplies = $(byText("Канцтовары")),
+            category2ndLevelCases = $("a[href*='/shop/catalogue/10508/sort/a/page/1.html']"),
             categoryTitle = $("h1");
-
-    private final Random random = new Random();
-    ElementsCollection categories = $$(".md-left a");
-    ElementsCollection categories2ndLevel = $$(".menu__sections a.menu__list__link.title");
-    private String expectedCategoryName;
-    private String expected2ndLevelCategoryName;
-
-    private final Map<String, String> categoryTitles = Map.of(
-            "Книги", "Книги",
-            "Образование", "Учебники, учебная литература",
-            "Канцтовары", "Канцтовары",
-            "Книги на иностранных языках", "Литература на иностранных языках",
-            "Игрушки", "Игры и игрушки",
-            "Хобби", "Всё для хобби",
-            "Сувениры", "Сувениры",
-            "Видео, музыка, софт", "Видео, аудио и программное обеспечение"
-    );
 
     public CategoriesPage openCategoriesTab() {
         categoriesTab.click();
         return this;
     }
 
-    public CategoriesPage clickRandomCategory() {
-        int index = random.nextInt(categories.size());
-        SelenideElement chosen = categories.get(index);
-        String menuCategoryName = chosen.getText().trim();
-        this.expectedCategoryName = categoryTitles.get(menuCategoryName);
-        chosen.click();
+    public CategoriesPage clickCategory1stLevel() {
+        category1stLevelBooks.click();
         return this;
     }
 
     public CategoriesPage verifyCategoryTitle() {
-        categoryTitle.shouldHave(text(expectedCategoryName));
+        categoryTitle.shouldHave(text("Книги"));
         return this;
     }
 
-    public CategoriesPage hoverRandom2ndLevelCategory() {
-        int index = random.nextInt(categories.size());
-        SelenideElement chosen = categories.get(index);
-        chosen.hover();
+    public CategoriesPage hover1stLevelCategory() {
+        category1stLevelSupplies.hover();
         return this;
     }
 
-    public CategoriesPage clickRandom2ndLevelCategory() {
-        int index = random.nextInt(categories2ndLevel.size());
-        SelenideElement chosen = categories2ndLevel.get(index);
-        this.expected2ndLevelCategoryName = chosen.getText().trim();
-        chosen.click();
+    public CategoriesPage click2ndLevelCategory() {
+        category2ndLevelCases.click();
         return this;
     }
 
     public CategoriesPage verify2ndLevelCategoryTitle() {
-        categoryTitle.shouldHave(text(expected2ndLevelCategoryName));
+        categoryTitle.shouldHave(text("Пенал"));
         return this;
     }
 }

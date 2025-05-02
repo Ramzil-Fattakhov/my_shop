@@ -30,8 +30,8 @@ public class CategoriesPageTests extends TestBase{
         step("Открытие каталога товаров", () -> {
             categoriesPage.openCategoriesTab();
         });
-        step("Клик по случайной категории", () -> {
-            categoriesPage.clickRandomCategory();
+        step("Клик по категории 1 уровня 'Книги'", () -> {
+            categoriesPage.clickCategory1stLevel();
         });
         step("Проверка открытия листинга категории 1 уровня", () -> {
             categoriesPage.verifyCategoryTitle();
@@ -51,11 +51,12 @@ public class CategoriesPageTests extends TestBase{
         step("Открытие каталога товаров", () -> {
             categoriesPage.openCategoriesTab();
         });
-        step("Наведение мыши на случайную категорию 2 уровня", () -> {
-            categoriesPage.hoverRandom2ndLevelCategory();
+        step("Наведение мыши на категорию 1 уровня", () -> {
+            categoriesPage.hover1stLevelCategory();
         });
-        step("Клик по случайной категории 2 уровня", () -> {
-            categoriesPage.clickRandom2ndLevelCategory();
+
+        step("Клик по категории 2 уровня", () -> {
+            categoriesPage.click2ndLevelCategory();
         });
         step("Проверка открытия листинга категории 2 уровня", () -> {
             categoriesPage.verify2ndLevelCategoryTitle();
