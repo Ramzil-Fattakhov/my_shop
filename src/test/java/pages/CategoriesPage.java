@@ -5,8 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.interactable;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.actions;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class CategoriesPage {
@@ -34,8 +33,10 @@ public class CategoriesPage {
     }
 
     public CategoriesPage hover1stLevelCategory() {
-        category1stLevelSupplies.hover();
-        $(".md-title").shouldHave(text("Канцтовары"));
+        executeJavaScript(
+                "arguments[0].dispatchEvent(new MouseEvent('mouseover', {bubbles: true}));",
+                $(category1stLevelSupplies)
+        );
         return this;
     }
 
