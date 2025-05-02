@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.actions;
+
 
 public class CategoriesPage {
 
@@ -31,11 +33,13 @@ public class CategoriesPage {
 
     public CategoriesPage hover1stLevelCategory() {
         category1stLevelSupplies.hover();
+        actions().pause(500).perform();
         return this;
     }
 
     public CategoriesPage click2ndLevelCategory() {
-        category2ndLevelCases.click();
+        actions().moveToElement(category2ndLevelCases).click().perform();
+        //  category2ndLevelCases.click();
         return this;
     }
 
