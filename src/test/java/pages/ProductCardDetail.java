@@ -1,11 +1,10 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ProductCardDetail {
 
@@ -15,11 +14,12 @@ public class ProductCardDetail {
             addToCardButton = $(byText("В корзину")).parent(),
             addToCardTabButton = $(".tabs-button.orange"),
             questionFormButton = $("[to='#reviews']"),
-            anotherQuestionFormButton = $("button[type='button'] span:contains('Задать вопрос')"),
+            anotherQuestionFormButton = $$("button").findBy(text("Задать вопрос")),
             userNameInput = $("input#name"),
+            questionModalWindow = $("[role='dialog']"),
             questionTextInput = $("#inputTextarea"),
             sendQuestionButton = $(byText("Отправить")),
-            switchToQuestionButton = $("#reviews").$(byText("Вопросы")),
+            switchToQuestionButton = $$("h3").findBy(partialText("Вопросы")),
             modalDialogHeader = $(byText("Спасибо за вопрос!"));
 
     public ProductCardDetail openProductDetailPage() {
@@ -48,10 +48,14 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail openQuestionForm() {
-        if (questionFormButton.exists() && questionFormButton.isDisplayed()) {
-            questionFormButton.click();
-        } else {
+        questionFormButton.click();
+        if (questionModalWindow.isDisplayed()) {
+            return this;
+        }
+        else {
             System.out.println("Форма вопросов не найдена, выполняем альтернативные шаги");
+            switchToQuestionButton.scrollIntoView(true);
+            sleep(500);
             switchToQuestionButton.click();
             anotherQuestionFormButton.click();
         }
