@@ -15,9 +15,11 @@ public class ProductCardDetail {
             addToCardButton = $(byText("В корзину")).parent(),
             addToCardTabButton = $(".tabs-button.orange"),
             questionFormButton = $("[to='#reviews']"),
+            anotherQuestionFormButton = $("button[type='button'] span:contains('Задать вопрос')"),
             userNameInput = $("input#name"),
             questionTextInput = $("#inputTextarea"),
             sendQuestionButton = $(byText("Отправить")),
+            switchToQuestionButton = $("#reviews").$(byText("Вопросы")),
             modalDialogHeader = $(byText("Спасибо за вопрос!"));
 
     public ProductCardDetail openProductDetailPage() {
@@ -46,7 +48,13 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail openQuestionForm() {
-        questionFormButton.click();
+        if (questionFormButton.exists() && questionFormButton.isDisplayed()) {
+            questionFormButton.click();
+        } else {
+            System.out.println("Форма вопросов не найдена, выполняем альтернативные шаги");
+            switchToQuestionButton.click();
+            anotherQuestionFormButton.click();
+        }
         return this;
     }
 

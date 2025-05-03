@@ -43,7 +43,7 @@
 
 ### Запуск тестов из терминала
 ```
-gradle clean main_test
+gradle clean regression_test
 ```
 При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
 
@@ -59,17 +59,17 @@ main -Dremote=${REMOTEURL}
 -DbaseUrl=${BASEURL}
 -DbrowserSize=${BROWSERSIZE}
 -Dbrowser=${BROWSER}
--DbrowserVersion="${BROWSERVERSION}"
--DisRemote="${ISREMOTE}"
+-DbrowserVersion=${BROWSERVERSION}
+-DisRemote=${ISREMOTE}
 ```
 
 ### Параметры сборки
 
-* <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
-* <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>100.0</code>.
-* <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты.
-* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение. По-умолчанию - <code>1920x1080</code>.
-* <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+* <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
+* <code>BROWSERVERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>128.0</code>.
+* <code>BROWSERSIZE</code> – размер окна браузера, в котором будут выполняться тесты.
+* <code>BASEURL</code> – Url, по которому будет открываться тестируемое приложение. По-умолчанию - <code>1920x1080</code>.
+* <code>REMOTEURL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
 ## <img src="images/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
 <p align="center">

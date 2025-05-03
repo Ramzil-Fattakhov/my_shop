@@ -66,7 +66,7 @@ public class ProductCardDetailTests extends TestBase{
             productCardDetail.openQuestionForm();
         });
         step("Заполнение формы", () -> {
-            productCardDetail.setUserName("Иван", "Есть ли в наличии в твердом переплете?");
+            productCardDetail.setUserName("Роман", "Сколько весит данный товар?");
         });
         step("Клик по кнопке 'Отправить'", () -> {
             productCardDetail.sendQuestion();
