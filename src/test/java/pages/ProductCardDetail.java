@@ -49,18 +49,9 @@ public class ProductCardDetail {
     }
 
     public ProductCardDetail openQuestionForm() {
-        questionFormButton.click();
-        if (questionModalWindow.isDisplayed()) {
-            return this;
-        }
-        else {
-            System.out.println("Форма вопросов не найдена, выполняем альтернативные шаги");
             descriptionBlock.scrollIntoView(true);
-            sleep(500);
             switchToQuestionButton.click();
             anotherQuestionFormButton.click();
-        }
-
         return this;
     }
 
