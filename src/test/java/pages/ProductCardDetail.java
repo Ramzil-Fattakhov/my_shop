@@ -18,6 +18,7 @@ public class ProductCardDetail {
             userNameInput = $("input#name"),
             questionModalWindow = $("[role='dialog']"),
             questionTextInput = $("#inputTextarea"),
+            descriptionBlock = $("#description"),
             sendQuestionButton = $(byText("Отправить")),
             switchToQuestionButton = $$("h3").findBy(partialText("Вопросы")),
             modalDialogHeader = $(byText("Спасибо за вопрос!"));
@@ -54,11 +55,11 @@ public class ProductCardDetail {
         }
         else {
             System.out.println("Форма вопросов не найдена, выполняем альтернативные шаги");
-            switchToQuestionButton.scrollIntoView(true);
-            sleep(500);
+            descriptionBlock.scrollIntoView(true);
             switchToQuestionButton.click();
             anotherQuestionFormButton.click();
         }
+
         return this;
     }
 
