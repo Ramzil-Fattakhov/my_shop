@@ -56,6 +56,7 @@ public class ProductCardDetail {
         else {
             System.out.println("Форма вопросов не найдена, выполняем альтернативные шаги");
             descriptionBlock.scrollIntoView(true);
+            sleep(500);
             switchToQuestionButton.click();
             anotherQuestionFormButton.click();
         }

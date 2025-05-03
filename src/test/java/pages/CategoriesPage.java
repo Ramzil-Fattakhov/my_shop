@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
@@ -20,6 +21,7 @@ public class CategoriesPage {
 
     public CategoriesPage openCategoriesTab() {
         categoriesTab.click();
+        sleep(500);
         return this;
     }
 
