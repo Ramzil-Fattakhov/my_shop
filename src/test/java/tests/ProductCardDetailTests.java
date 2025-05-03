@@ -10,13 +10,13 @@ import pages.ProductCardDetail;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Тесты детальной страницы товары")
+@Tag("regression")
 @Tag("productCardDetail-tests")
 public class ProductCardDetailTests extends TestBase{
 
     ProductCardDetail productCardDetail = new ProductCardDetail();
 
     @Test
-    @Tag("regression")
     @Feature("Избранное")
     @Story("Детальная страница товара")
     @Owner("Fattakhov Ramzil")
@@ -35,7 +35,6 @@ public class ProductCardDetailTests extends TestBase{
     }
 
     @Test
-    @Tag("regression")
     @Feature("Добавление в корзину")
     @Story("Детальная страница товара")
     @Owner("Fattakhov Ramzil")
@@ -54,7 +53,6 @@ public class ProductCardDetailTests extends TestBase{
     }
 
     @Test
-    @Tag("regression")
     @Feature("Оставление вопроса")
     @Story("Детальная страница товара")
     @Owner("Fattakhov Ramzil")

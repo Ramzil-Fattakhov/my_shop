@@ -11,6 +11,7 @@ import pages.CategoriesPage;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Тесты каталога")
+@Tag("regression")
 @Tag("categoriesPage-tests")
 public class CategoriesPageTests extends TestBase{
 
@@ -54,7 +55,6 @@ public class CategoriesPageTests extends TestBase{
         step("Наведение мыши на категорию 1 уровня", () -> {
             categoriesPage.hover1stLevelCategory();
         });
-
         step("Клик по категории 2 уровня", () -> {
             categoriesPage.click2ndLevelCategory();
         });

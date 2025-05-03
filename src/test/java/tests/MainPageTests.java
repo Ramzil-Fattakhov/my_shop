@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -8,10 +7,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
-import java.time.Duration;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Тесты главной страницы")
+@Tag("regression")
 @Tag("mainPage-tests")
 public class MainPageTests extends TestBase{
 
