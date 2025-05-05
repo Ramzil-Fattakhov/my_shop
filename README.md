@@ -112,7 +112,7 @@ main -Dremote=${REMOTEURL}
 После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="images/screen/notification.png">
+<img width="70%" title="Telegram Notifications" src="images/screen/tgnotification.png">
 </p>
 
 ## Видео примера запуска тестов в Selenoid
